@@ -8,8 +8,7 @@ pool:
 variables:
   client_id: 'clientID'
   tenant_id: 'tenantID'
-  subscription_id: 'subID'
-  managed_image_resource_group_name: 'app1ResourceGroup'
+  subscription_id: 'subID'  
 
 steps:
 - task: PackerBuild@1
