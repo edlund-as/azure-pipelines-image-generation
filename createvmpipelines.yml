@@ -7,6 +7,7 @@ pool:
 
 steps:
 - task: PackerBuild@1
+  timeoutInMinutes: 0
   inputs:
     templateType: 'custom'
     customTemplateLocation: 'images\win\vs2019-Server2019-Azure.json'
