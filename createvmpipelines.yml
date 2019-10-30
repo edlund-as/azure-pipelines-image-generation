@@ -5,9 +5,12 @@ pool:
 #Your build pipeline references a secret variable named ‘client_secret’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it secret. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘managed_image_prefix’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
 
-steps:
-- task: PackerBuild@1
+jobs:
+
+- job: "Build packer image"
   timeoutInMinutes: 0
+steps:
+- task: PackerBuild@1  
   inputs:
     templateType: 'custom'
     customTemplateLocation: 'images\win\vs2019-Server2019-Azure.json'
