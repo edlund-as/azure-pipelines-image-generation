@@ -4,13 +4,13 @@ pool:
   name: Edlund-dev on-premises OS2019-VS2019
 #Your build pipeline references a secret variable named ‘client_secret’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab, and then select the option to make it secret. See https://go.microsoft.com/fwlink/?linkid=865972
 #Your build pipeline references an undefined variable named ‘managed_image_prefix’. Create or edit the build pipeline for this YAML file, define the variable on the Variables tab. See https://go.microsoft.com/fwlink/?linkid=865972
-
+#Test
 jobs:
 
 - job: "BuildPackerVM"
   timeoutInMinutes: 0
   steps:
-  - task: PackerBuild@1  
+  - task: PackerBuild@1
     inputs:
       templateType: 'custom'
       customTemplateLocation: 'images\win\vs2019-Server2019-Azure.json'
@@ -27,7 +27,7 @@ jobs:
 
   - pwsh: |
       Write-Host "Build image: $(Buildimage)"
-        
+
   - pwsh: |
       dir function:
       write-host "env"
