@@ -20,9 +20,9 @@ jobs:
       baseImageSource: 'customVhd'
       imageUri: 'Buildimage'
     enabled: false
-  - pwsh: |
-        $foo = "https://packermyvs2019buildagent.blob.core.windows.net/system/Microsoft.Compute/Images/images/packer-osDisk.273d3f7c-723c-4fcf-951d-cb45b09ad064.vhd"
-        Write-Host "##vso[task.setvariable variable=MyVariableName;isOutput=true]$foo"
+  #- pwsh: |
+  #      $foo = "https://packermyvs2019buildagent.blob.core.windows.net/system/Microsoft.Compute/Images/images/packer-osDisk.273d3f7c-723c-4fcf-951d-cb45b09ad064.vhd"
+  #      Write-Host "##vso[task.setvariable variable=MyVariableName;isOutput=true]$foo"
 
 
   - pwsh: |
