@@ -18,4 +18,18 @@ jobs:
       #customTemplateParameters: '{"install_password":"$(install_password)","client_id":"$(client_id)","client_secret":"$(client_secret)","tenant_id":"$(tenant_id)","subscription_id":"$(subscription_id)","build_resource_group_name":"$(resource_group)","storage_account":"$(storage_account)"}'
       packerVersion: '1.4.4'
       baseImageSource: 'customVhd'
-      imageUri: '$imageURL'
+      imageUri: 'Buildimage'
+    enabled: false
+  - pwsh: |
+        $foo = "https://packermyvs2019buildagent.blob.core.windows.net/system/Microsoft.Compute/Images/images/packer-osDisk.273d3f7c-723c-4fcf-951d-cb45b09ad064.vhd"
+        Write-Host "##vso[task.setvariable variable=MyVariableName;isOutput=true]$foo"
+
+
+  - pwsh: |
+      Write-Host "Build image: $(Buildimage)"
+        
+  - pwsh: |
+      dir function:
+      write-host "env"
+      dir env:
+    displayName: "pwsh environment variables"
